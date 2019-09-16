@@ -51,7 +51,15 @@ function! s:PandocMarkdownPreview()
     endif
 endfunction
 
+function! s:PandocEndPreview()
+    if (exists('g:pandoc_preview_pdf_cmd'))
+        call system(printf("ps -efw | grep %s | grep -v grep | awk '{print $2}' | xargs kill",
+                        \shellescape(g:pandoc_preview_pdf_cmd)))
+    endif
+endfunction
+
 command! PandocCompile call <SID>PandocGenerateFile()
 command! PandocPreview call <SID>PandocMarkdownPreview()
+command! PandocEnd call <SID>PandocEndPreview()
 
 finish
