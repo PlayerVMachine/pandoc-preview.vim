@@ -7,7 +7,8 @@ Introduction
 [pandoc-preview.vim](http://github.com/yulan6248/pandoc-preview.vim) is just a minimalistic plugin that I use personally for previewing pandoc. There are two commands that come with the plugin: 
 
 * `PandocPreview`: compile the pdf file and launch it with the configured pdf reader; after that each time the file is written the pdf will be updated
-* `PandocCompile`: compile the pdf file only 
+* `PandocCompile`: compile the pdf file only
+* `PandocEnd`    : Close the configured pdf reader
 
 Quick start
 -----------
